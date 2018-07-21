@@ -1,0 +1,20 @@
+{
+  "name": "try-line-development",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Shunsuke Toba <boushi_sukaimu@yahoo.co.jp>",
+  "license": "ISC",
+  "dependencies": {
+    "@line/bot-sdk": "^6.1.0",
+    "express": "^4.16.3",
+    "global": "^4.3.2",
+    "ngrok": "^3.0.1",
+    "node-env-file": "^0.1.8"
+  }
+}
