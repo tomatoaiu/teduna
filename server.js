@@ -29,6 +29,7 @@ function handleEvent(event) {
     let conf = msg.split("/");
     if (msg.match(/^[0-9]{3}-?[0-9]{4}\/.+/)) {
       var res = utils.isExistDatabaseAsyc(conf[0], conf[1]);
+
       if (res.exist) {
         utils.appendUser(event.source.userId, res.key);
       } else {

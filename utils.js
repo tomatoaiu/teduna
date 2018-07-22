@@ -41,7 +41,7 @@ async function isExistDatabaseAsyc (postCode, buildingName) {
 }
 
 function appendUser(user_id, building_id){
-    var usersRef = ref.child("buiding").child(building_id).child("users")
+    var usersRef = ref.child(`buiding/${building_id}/users`)
     usersRef.push({
         id: user_id
     })
