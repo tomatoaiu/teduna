@@ -29,6 +29,7 @@ async function isExistDatabase(postCode, buildingName) {
   let res = { exist: false, key: "" };
   await Object.keys(buildings).forEach(function (key) {
       if (buildings[key]["postalCode"] === postCode && buildings[key]["name"] === buildingName) {
+        console.log(buildings[key]["postalCode"] + " , " + buildings[key]["name"])
         res =  { exist: true, key: key }
       }
   });
