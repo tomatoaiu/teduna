@@ -34,7 +34,7 @@ async function handleEvent(event) {
       await Promise.all([aaa])
       .then((respon) => {
         console.log("2", respon)
-        res = respon
+        res = respon[0][0]
       });
       console.log(3)
 
