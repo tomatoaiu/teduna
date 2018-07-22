@@ -31,15 +31,24 @@ async function isExistDatabase(postCode, buildingName) {
       if (buildings[key]["postalCode"] === postCode && buildings[key]["name"] === buildingName) {
         console.log(buildings[key]["postalCode"] + " , " + buildings[key]["name"])
         res =  { exist: true, key: key }
+        return res;
       }
   });
   return res
 }
 
 async function isExistDatabaseAsyc (postCode, buildingName) {
-  const a = await isExistDatabase(postCode, buildingName);
-  return a
+  const a = isExistDatabase(postCode, buildingName);
+  return await Promise.all([a])
+  .then((res) => {
+    console.log("1", a)
+    return res
+  });
 }
+
+// isExistDatabaseAsyc
+
+// console.log("0", isExistDatabaseAsyc("020-0621", "サニービレッジ大崎1号棟"))
 
 function appendUser(user_id, building_id){
     var usersRef = ref.child(`buiding/${building_id}/users`)

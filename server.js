@@ -28,7 +28,15 @@ async function handleEvent(event) {
     let msg = event.message.text;
     let conf = msg.split("/");
     if (msg.match(/^[0-9]{3}-?[0-9]{4}\/.+/)) {
-      var res = await utils.isExistDatabaseAsyc(conf[0], conf[1]);
+      var res = undefined;
+      var aaa = utils.isExistDatabaseAsyc(conf[0], conf[1]);
+      console.log(1)
+      await Promise.all([aaa])
+      .then((respon) => {
+        console.log("2", respon)
+        res = respon
+      });
+      console.log(3)
 
       if (res.exist) {
         utils.appendUser(event.source.userId, res.key);
@@ -42,6 +50,7 @@ async function handleEvent(event) {
       });
     }
 
+    // return client.multicast(ids, [event.message.text]);
     return client.replyMessage(event.replyToken, {
       type: 'text',
       text: event.message.text //実際に返信の言葉を入れる箇所
