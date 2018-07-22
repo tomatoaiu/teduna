@@ -40,4 +40,27 @@ async function isExistDatabaseAsyc (postCode, buildingName) {
   return a
 }
 
+function appendUser(user_id, building_id){
+    var usersRef = ref.child("buiding").child(building_id).child("users")
+    usersRef.push({
+        id: user_id
+    })
+}
+
+function createBuilding(user_id, postal_code, name) {
+    var postsRef = ref.child("building");
+
+    var newPostRef = postsRef.push();
+    newPostRef.set({
+        postalCode: postal_code,
+        name: name
+    });
+
+    var usersRef = newPostRef.child("users");
+
+    usersRef.push({id: user_id});
+}
+
 module.exports.isExistDatabaseAsyc = isExistDatabaseAsyc()
+module.exports.appendUser = appendUser()
+module.exports.createBuilding = createBuilding()
