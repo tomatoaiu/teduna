@@ -5,7 +5,7 @@ const { config, fbConfig } = require('./config')
 
 
 // Fetch the service account key JSON file contents
-var serviceAccount = require("path/to/serviceAccountKey.json");
+var serviceAccount = require("./serviceAccountKey.json");
 
 // Initialize the app with a custom auth variable, limiting the server's access
 admin.initializeApp({
