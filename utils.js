@@ -26,7 +26,7 @@ async function promise () {
 async function isExistDatabase(postCode, buildingName) {
   const data = await promise();
   var buildings = data.val().building
-  let res = { exist: false, key: '' };
+  let res = { exist: false, key: "" };
   await Object.keys(buildings).forEach(function (key) {
       if (buildings[key]["postalCode"] === postCode && buildings[key]["name"] === buildingName) {
         res =  { exist: true, key: key }
@@ -61,6 +61,6 @@ function createBuilding(user_id, postal_code, name) {
     usersRef.push({id: user_id});
 }
 
-module.exports.isExistDatabaseAsyc = isExistDatabaseAsyc()
-module.exports.appendUser = appendUser()
-module.exports.createBuilding = createBuilding()
+module.exports.isExistDatabaseAsyc = isExistDatabaseAsyc
+module.exports.appendUser = appendUser
+module.exports.createBuilding = createBuilding
