@@ -1,5 +1,6 @@
 // Import Admin SDK
 var admin = require("firebase-admin");
+const { config, fbConfig } = require('./config')
 
 // Fetch the service account key JSON file contents
 var serviceAccount = require("./serviceAccountKey.json");
@@ -7,7 +8,7 @@ var serviceAccount = require("./serviceAccountKey.json");
 // Initialize the app with a service account, granting admin privileges
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: process.env.DATABASEURL
+  databaseURL: fbConfig.databaseURL
 });
 
 // Get a database reference to our blog
