@@ -20,7 +20,7 @@ function handleEvent(event) {
   if (event.type === 'follow') {
     return client.replyMessage(event.replyToken, {
       type: 'text',
-      text: `友だち登録ありがとうございます٩( ᐛ )و\nTEDUNAは，集合住宅居住者向けコミュニケーションアプリです\n\n郵便番号と建物名を以下のように入力してください(star)\n例：100-8111/皇居`
+      text: `友だち登録ありがとうございます٩( ᐛ )و\nTEDUNAは，集合住宅居住者向けコミュニケーションアプリです\n\n郵便番号と建物名を以下のように入力してください\n例：100-8111/皇居`
     });
 
   }else if (event.type == 'message' || event.message.type == 'text') {
