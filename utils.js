@@ -26,15 +26,18 @@ async function promise () {
 async function isExistDatabase(postCode, buildingName) {
   const data = await promise();
   var buildings = data.val().building
-  return await Object.keys(buildings).some(function (key) {
-      return (buildings[key]["postalCode"] == postCode && buildings[key]["name"] == buildingName)
+  let res = { exist: false, key: '' };
+  await Object.keys(buildings).forEach(function (key) {
+      if (buildings[key]["postalCode"] === postCode && buildings[key]["name"] === buildingName) {
+        res =  { exist: true, key: key }
+      }
   });
+  return res
 }
 
-async function isExistDatabaseAsyc () {
+async function isExistDatabaseAsyc (postCode, buildingName) {
   const a = await isExistDatabase(postCode, buildingName);
   return a
 }
-
 
 module.exports.isExistDatabaseAsyc = isExistDatabaseAsyc()
