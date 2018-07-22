@@ -1,6 +1,21 @@
 # teduna
 teduna
 
+## 使い方
+```
+git clone https://github.com/tomatoaiu/teduna.git
+cd teduna
+npm i
+touch .env            #.envファイル作成　この中にシークレットなキーを入れる
+```
+
+## .envファイルにみたいに
+```
+CHANNELACCESSTOKEN=asdfghjk123456789
+CHANNELSECRET=12345678qwertyuio
+```
+
+
 ## 変更したい場合
 ```sh
 node server.js
