@@ -9,12 +9,23 @@ npm i
 touch .env            #.envファイル作成　この中にシークレットなキーを入れる
 ```
 
-## .envファイル以下みたいに記入
-CHANNELACCESSTOKENがlineのアクセストークン
-CHANNELSECRETがlineのChannel Secret
+## .envファイルに以下みたいに記入
+- CHANNELACCESSTOKENがlineのアクセストークン
+- CHANNELSECRETがlineのChannel Secret
+
+- それ以外は、firebaseのキー
+
+### .env
 ```
 CHANNELACCESSTOKEN=asdfghjk123456789
 CHANNELSECRET=12345678qwertyuio
+
+APIKEY=1qaz2wsdx3edc
+AUTHDOMAIN=1qaz2wsdx3edc
+DATABASEURL=1qaz2wsdx3edc
+PROJECTID=1qaz2wsdx3edc
+STORAGEBUCKET=1qaz2wsdx3edc
+MESSAGINGSENDERID=1qaz2wsdx3edc
 ```
 
 
