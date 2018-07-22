@@ -17,7 +17,7 @@ app.post('/webhook', line.middleware(config), (req, res) => {
 
 const client = new line.Client(config);
 
-function handleEvent(event) {
+async function handleEvent(event) {
   if (event.type === 'follow') {
     return client.replyMessage(event.replyToken, {
       type: 'text',
@@ -28,7 +28,7 @@ function handleEvent(event) {
     let msg = event.message.text;
     let conf = msg.split("/");
     if (msg.match(/^[0-9]{3}-?[0-9]{4}\/.+/)) {
-      var res = utils.isExistDatabaseAsyc(conf[0], conf[1]);
+      var res = await utils.isExistDatabaseAsyc(conf[0], conf[1]);
 
       if (res.exist) {
         utils.appendUser(event.source.userId, res.key);
