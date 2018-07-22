@@ -27,7 +27,7 @@ function handleEvent(event) {
       例：100-8111/皇居`
     });
 
-  }else if (event.type !== 'message' || event.message.type !== 'text') {
+  }else if (event.type == 'message' || event.message.type == 'text') {
     return client.replyMessage(event.replyToken, {
       type: 'text',
       text: event.message.text //実際に返信の言葉を入れる箇所
