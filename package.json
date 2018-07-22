@@ -13,6 +13,7 @@
   "dependencies": {
     "@line/bot-sdk": "^6.1.0",
     "express": "^4.16.3",
+    "firebase-admin": "^5.13.0",
     "global": "^4.3.2",
     "ngrok": "^3.0.1",
     "node-env-file": "^0.1.8"

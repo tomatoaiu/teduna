@@ -2,23 +2,8 @@
 
 const express = require('express');
 const line = require('@line/bot-sdk');
-const env = require('node-env-file');
+const { config, fbConfig } = require('./config')
 const PORT = process.env.PORT || 3000;
-
-env(__dirname + '/.env');
-const config = {
-    channelAccessToken: process.env.CHANNELACCESSTOKEN,
-    channelSecret: process.env.CHANNELSECRET
-};
-
-const fbConfig = {
-    apiKey: process.env.APIKEY,
-    authDomain: process.env.AUTHDOMAIN,
-    databaseURL: process.env.DATABASEURL,
-    projectId: process.env.PROJECTID,
-    storageBucket: process.env.STORAGEBUCKET,
-    messagingSenderId: process.env.MESSAGINGSENDERID
-}
 
 const app = express();
 
