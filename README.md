@@ -9,7 +9,9 @@ npm i
 touch .env            #.envファイル作成　この中にシークレットなキーを入れる
 ```
 
-## .envファイルにみたいに
+## .envファイル以下みたいに記入
+CHANNELACCESSTOKENがlineのアクセストークン
+CHANNELSECRETがlineのChannel Secret
 ```
 CHANNELACCESSTOKEN=asdfghjk123456789
 CHANNELSECRET=12345678qwertyuio
