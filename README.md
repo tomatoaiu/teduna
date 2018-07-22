@@ -1,5 +1,5 @@
-# try-line-development
-line sample project
+# teduna
+teduna
 
 ## 変更したい場合
 ```sh
